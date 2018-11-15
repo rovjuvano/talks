@@ -3,13 +3,18 @@
 // V&
 // [O
 // [&
-// ERROR: does not compile: into takes ownership but into_iter on a ref yields refs to items
-// pub fn call<'a>(s: &str, items: &[impl Into<&'a i32>]) {
-//     println!("{}:{}:", module_path!(), s);
-//     for (i, x) in items.into_iter().enumerate() {
-//         super::print(i, *(*x).into());
-//     }
-// }
+use std::borrow::Borrow;
+#[allow(unused)]
+pub fn call<'a, I, T>(s: &str, items: I)
+where
+    I: IntoIterator,
+    I::Item: Borrow<&'a dyn (::std::ops::Deref<Target = i32>)>,
+{
+    println!("{}:{}:", module_path!(), s);
+    for (i, x) in items.into_iter().enumerate() {
+        super::print(i, ***x.borrow());
+    }
+}
 pub fn main() {
     // call("OVO", vec![1i32, 2, 3]);
     // call("OV&", vec![&1i32, &2, &3]);

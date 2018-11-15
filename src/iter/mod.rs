@@ -5,11 +5,13 @@ mod into_iterator_as_ref_owned;
 mod into_iterator_as_ref_ref;
 mod into_iterator_borrow_borrow_owned;
 mod into_iterator_borrow_borrow_ref;
+mod into_iterator_borrow_deref_owned;
 mod into_iterator_borrow_owned;
 mod into_iterator_borrow_ref;
 mod into_iterator_cow_owned;
 mod into_iterator_cow_ref;
 mod into_iterator_debug;
+mod into_iterator_deref_borrow_owned;
 mod into_iterator_deref_owned;
 mod into_iterator_deref_ref;
 mod into_iterator_into_owned;
@@ -97,6 +99,8 @@ pub fn main() {
 
     into_iterator_borrow_borrow_owned::main();
     into_iterator_borrow_borrow_ref::main();
+    into_iterator_deref_borrow_owned::main();
+    into_iterator_borrow_deref_owned::main();
 
     as_ref_into_iterator::main();
     borrow_into_iterator_borrow::main();

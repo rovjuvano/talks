@@ -19,6 +19,56 @@
             }
         },
         {
+            "type": "cargo",
+            "label": "cargo test",
+            "command": "cargo",
+            "args": [
+                "test"
+            ],
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "cargo",
+            "label": "cargo clean",
+            "command": "cargo",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "RUST_BACKTRACE=1 cargo run",
+            "command": "cargo",
+            "args": [
+                "run"
+            ],
+            "options": {
+                "env": {
+                    "RUST_BACKTRACE": "1",
+                },
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "type": "shell",
             "label": "cargo doc",
             "command": "cargo",

@@ -1,6 +1,6 @@
 //! Exploring the 3 kinds of parameterized types within traits
 //!
-//! ```
+//! ``` ignore
 //! trait MyTrait<A> {
 //!     type B;
 //!     fn method<C>(&self, arg1: A, arg2: Self::B, arg3: C) -> (A, Self::B, C);
