@@ -1,8 +1,9 @@
 #![allow(dead_code)]
 extern crate rust;
 fn main() {
+    rust::into_iter_vs_iter::main();
+    rust::iter::main();
     rust::traits::main();
-    // rust::iter::main();
 }
 
 // pub trait WatTrait<T, U> {
