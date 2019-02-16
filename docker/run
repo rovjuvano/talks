@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+docker run --init \
+  --rm -it\
+  -p 8000:8000 \
+  -v ${PWD}/index.html:/data/index.html \
+  -v ${PWD}/slides.md:/data/slides.md \
+  rovjuvano/reveal.js:1d29
